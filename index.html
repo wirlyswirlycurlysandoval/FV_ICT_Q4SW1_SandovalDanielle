@@ -25,82 +25,69 @@
          box-shadow: 5px 5px 15px 5px #0000006d
     }
 
+    h1{
+        color: aliceblue;
+    }
+
+    h5{
+        color: aliceblue;
+    }
+
+    .checkbox{
+        color: aliceblue;
+    }
+
 </style>
 </head>
-<body>
+<body class="container mt-4 text-dark">
+    <h1>Login page</h1>
+
+    <h5>Username</h5>
+    <input type="text" class="form-control" id="Username" placeholder="Username">
+    <br>
+    <h5>Password</h5>
+    <input type="password" class="form-control" id="Password" placeholder="Hint: Kpop Idol">
+    <br>
+
+    <!-- Checkbox -->
+    <input type="checkbox" id="checkboxID"> <label for="checkboxID">Remember Me</label>
     <br><br>
 
+    <button class="btn btn-info" onclick="Check()">Verify</button>
 
-   <div class="container bg text-light rounded text-center">
-
-
-   <h1 class="fw-bold display-4 fst-italic">Log In</h1>
-   <br>
-
-
-   <div id="form-box">
-
-
-   <form action ="">
-
-
-       <label for = "">Email:</label>
-       <br>
-       <input type = "text" class="form-control rounded" id = "Email" name = "Your Email" placeholder = "Your Email:" size="40">
-       <br>
-
-
-       <label for = "">Password:</label>
-       <br>
-       <input type = "text" id = "Password" name = "Your Password" placeholder = "Your Password:" class="form-control rounded" size="40">
-       <br>
-
-
-       <div class="text-center">
-        <a href="" class="text-light">Forgot Password?</a>
-       </div>
-       <br><br>
-
-
-       <div class="row">
-         <div class="col-6">
-
-
-       <input type="reset" id="reset" name="reset" value="Clear all" class="form-control rounded text-center">
-       </div>
-      
-         <div class="col-6">
-               <button type="button" onclick="login()" class="form-control rounded;">
-                    Log In
-               </button>
-           </div>
-       </form>
-        </div>
-          
-       </div>
-       </div></div>
 
 
    <script>
-       function login(){
-           let email = document.getElementById("Email").value;
-           let password = document.getElementById("Password").value;
+        function Check(){
+        let Username = document.getElementById("Username").value;
+        let Password = document.getElementById("Password").value;
+
+        let username = "jeonghanisMYGOAT@gmail.com";
+        let password = "ilovejeonghan1234";
+
+        let message;
 
 
-           if(email === "" || password === ""){
-               alert("Please fill in all fields.");
-               return;
-           }
+        if (Username === username && Password === password){
+            message = "Logged In!";
+        }
 
+        else {
+            message = "Invalid input";
+        }
 
-           if(email === "jeonghanisMYgoat@gmail.com" && password === "ilovejeonghan"){
-               alert("Login successful!");
-              
-           } else {
-               alert("Invalid email or password.");
-           }
-       }
-      
+        alert(message);
+            let isChecked = document.getElementById("checkboxID").checked;
+
+        switch(isChecked) {
+            case true:
+                document.getElementById("checkboxID").innerHTML = "Checkbox is selected";
+                break;
+            case false:
+                document.getElementById("checkboxID").innerHTML = "";
+                break;
+        }
+    }
       
    </script>
 
